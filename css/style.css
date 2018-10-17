@@ -160,6 +160,21 @@ body {
 }
 
 /* effect 2 styles */
+
+/*additional styles added by me*/
+.vertical-slider{
+  flex-direction: column;
+}
+.vertical-slider .flexbox-slide {
+  width: 100%
+}
+.vertical-slider .flexbox-slide:hover {
+  flex-shrink: 0;
+  height: 80%;
+  width: 100% !important;
+}
+/*additional styles end*/
+
 .flexbox-slider.flexbox-slider-2 .flexbox-slide .text-block {
   left: -60px;
 }
