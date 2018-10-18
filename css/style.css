@@ -3,17 +3,11 @@ html, body{
   width: 100%;
   height: 100%;
 }
-body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  color: #212121;
-  line-height: 1.4;
-}
 
 .container {
   width: 100%;
   height: 100%;
+  padding: 0;
 }
 
 .link {
@@ -102,20 +96,17 @@ body {
           transform: translate(-50%, -50%);
   z-index: 1;
 }
-.flexbox-slider .flexbox-slide .text-block {
+.flexbox-slider .flexbox-slide .inner-slider {
   position: absolute;
-  left: 30px;
-  bottom: 30px;
-  max-width: 400px;
-  padding: 20px;
+  bottom: 150px;
+  width: 100%;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   z-index: 4;
   visibility: hidden;
   opacity: 0;
 }
-.flexbox-slider .flexbox-slide .text-block h3 {
+.flexbox-slider .flexbox-slide .inner-slider h3 {
   font-size: 20px;
   font-weight: 700;
 }
@@ -125,16 +116,21 @@ body {
 }
 
 /* effect 1 styles */
-.flexbox-slider.flexbox-slider-1 .flexbox-slide .text-block {
-  bottom: 60px;
-}
-.flexbox-slider.flexbox-slider-1:hover .flexbox-slide:hover .text-block {
+.flexbox-slider.flexbox-slider-1:hover .flexbox-slide:hover .inner-slider {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
   transition-delay: 0.5s;
-  bottom: 30px;
+  bottom: 50px;
   opacity: 1;
+  visibility: visible;
+}
+.flexbox-slider.flexbox-slider-1:hover .flexbox-slide:hover .slider-title {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  /*transition-delay: 0.5s;*/
+  opacity: 0;
   visibility: visible;
 }
 
@@ -150,24 +146,58 @@ body {
 .flexbox-slide{
   background-size: cover;
 }
-.title-container{
-  background-color: lightskyblue;
-  height: 100%;
-  margin-left: 20px;
-  width: 3em;
+.slider-text{
+  text-align: left !important;
+  font-family: Open Sans Condensed,sans-serif;
+  text-transform: uppercase;
+  color: black;
 }
 .slider-title{
-  text-align: left !important;
   writing-mode: tb;
   transform: rotate(180deg);
-  font-family: Open Sans Condensed,sans-serif;
   font-size: 1.6em !important;
   font-weight: 700;
-  text-transform: uppercase;
   line-height: 2em;
   position: absolute;
   left: 20px;
-  bottom: 20px;
+  bottom: 0;
+  background-color: lightskyblue;
+  height: 100%;
+  padding-top: 20px;
+}
+.inner-title{
+  font-size: 50px !important;
+  font-weight: 700;
+  line-height: 55px;
+  background-color: lightskyblue;
+  padding-left: 40px;
+}
+.subtitle{
+  font-size: 24px;
+  margin-top: 20px;
+  background-color: rgba(255,255,255,.9);
+  line-height: 40px;
+  padding-left: 40px;
+}
+.inner-slider{
+  width: 100%;
+  left: 0;
+}
+.bold-description{
+    font-weight: 700;
+}
+.secondary{
+  display: flex;
+  align-items: center;
+}
+.secondary-inner{
+  display: inline-block;
+}
+.learn-more-btn{
+  background: #de7006;
+  color: #000;
+  font-weight: 700;
+  margin-left: 30%;
 }
 @media screen and (orientation: portrait) {
   .flexbox-slider{
@@ -180,5 +210,16 @@ body {
     flex-shrink: 0;
     height: 80%;
     width: 100% !important;
+  }
+  .slider-title {
+    width: 100%;
+    padding-left: 20px;
+    left: 0;
+    padding-top: 0px;
+    writing-mode: lr;
+    transform: initial;
+    top: 20px;
+    bottom: auto;
+    height: 2em;
   }
 }
