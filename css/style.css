@@ -45,13 +45,14 @@ html, body{
   visibility: hidden;
   opacity: 0;
 }
-.flexbox-slider:hover .flexbox-slide:hover {
+
+.flexbox-slide.stretch-animate {
   flex-shrink: 0;
   width: 80%;
 }
 
 /*handles transition of all properties that change for inner-slide*/
-.flexbox-slider:hover .flexbox-slide:hover .inner-slider {
+.flexbox-slide.stretch-animate .inner-slider {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
@@ -61,7 +62,7 @@ html, body{
   visibility: visible;
 }
 /*handles transition of all properties that change for slider title*/
-.flexbox-slider:hover .flexbox-slide:hover .slider-title {
+.flexbox-slide.stretch-animate .slider-title {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
@@ -148,7 +149,7 @@ html, body{
   .flexbox-slider .flexbox-slide {
     width: 100%
   }
-  .flexbox-slider .flexbox-slide:hover {
+  .flexbox-slide.stretch-animate {
     flex-shrink: 0;
     height: 80%;
     width: 100% !important;

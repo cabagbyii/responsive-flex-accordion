@@ -18,7 +18,7 @@
     <div class="slider-container">
       <div class="flexbox-slider">
         <!-- slide one -->
-        <div class="flexbox-slide one">
+        <div class="flexbox-slide one stretch-animate">
           <h1 class="slider-text slider-title">Header</h1>
           <div class="inner-slider">
             <h1 class="slider-text slider-info inner-title">Header</h1>
@@ -58,9 +58,29 @@
   </div>
 </div>
   
-  
+<script type="text/javascript">
+  function closeAllSlides() {
+    Array.from(document.querySelectorAll('.stretch-animate')).forEach(function(item) {
+        console.log(item);
+        item.classList.remove('stretch-animate');  
+    });
+  }
+  function slideAnimation(el) {
+    el.addEventListener('mouseover', function () {
+      closeAllSlides();
+      this.classList.add('stretch-animate');
+    });
+    // If close on mouseout is desired, uncomment
+    /*el.addEventListener('mouseout', function () {
+      this.classList.remove('stretch-animate');
+    });  */  
+  };
+  Array.from(document.getElementsByClassName('flexbox-slide')).forEach(function(item) {
+    slideAnimation(item)
+  });
+</script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
